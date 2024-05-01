@@ -1,0 +1,36 @@
+public class Kruglomer
+{
+    Double Rel= 0.5;
+    Double K3 = 0.88;
+    Double C1 = 0.0;
+    Integer Cbalanc = 8540368;
+    Double KRemont = 0.04;
+    Integer Nrabday = 248;
+    Integer Nrabcha=8;
+    Double Sk1WT = 6.42;
+    Integer T_mash = 2;
+
+    Kruglomer()
+    {
+        double dop = 0.00003;   //мм
+        double pog = 0.00001; //мм
+        double v1 = dop/pog;
+        System.out.println(v1+" допуск/погрешность");
+    }
+
+    //Электроэнергия не технологические нужды
+    public Double Electro()
+    {
+        Double sum = Rel*K3*T_mash*Sk1WT;
+        return sum;
+    }
+
+    public Double Amortiza()
+    {
+        Double sum = ((Cbalanc*KRemont)/Nrabday/Nrabcha)*T_mash;
+        return sum;
+    }
+
+}
+
+
